@@ -1,0 +1,24 @@
+<% quantity = product_id['quantity'].to_i %>
+
+<% if line_item = LineItem.find_by(id: product_id) %>
+  <% item_total = line_item.item_price_cents * quantity %>
+  <% @order_total_cents += item_total %>
+
+  <% product = Product.find_by(id: line_item.product_id) %>
+  <tr>
+    <td>
+      <h4><%= product.name %></h4>
+      <br>
+      <p><%= product.description %></p>
+    </td>
+    <td>
+      <%= humanized_money_with_symbol line_item.item_price_cents %>
+    </td>
+    <td>
+      <%= quantity %>
+    </td>
+    <td>
+      <%= humanized_money_with_symbol item_total %>
+    </td>
+  </tr>
+<% end %>
