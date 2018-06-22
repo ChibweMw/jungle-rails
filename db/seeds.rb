@@ -133,4 +133,36 @@ cat3.products.create!({
 })
 
 
+puts "Re-creating Ratings ..."
+
+ProductRating.destroy_all
+
+ProductRating.create!({
+  product_id: 12,
+  user_id: 3,
+  description: "Super weird. But could be weirder!",
+  rating: 4
+})
+
+ProductRating.create!({
+  product_id: 12,
+  user_id: 1,
+  description: "Impractical",
+  rating: 1
+})
+
+ProductRating.create!({
+  product_id: 12,
+  user_id: 2,
+  description: "Too normal looking",
+  rating: 2
+})
+
+ProductRating.create!({
+  product_id: 11,
+  user_id: 1,
+  description: "Best Lawn Chair, Evr",
+  rating: 5
+})
+
 puts "DONE!"

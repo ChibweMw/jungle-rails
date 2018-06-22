@@ -1,0 +1,15 @@
+                                      Table "public.product_ratings"
+   Column    |            Type             |                          Modifiers                           
+-------------+-----------------------------+--------------------------------------------------------------
+ id          | integer                     | not null default nextval('product_ratings_id_seq'::regclass)
+ product_id  | character varying           | 
+ user_id     | character varying           | 
+ description | character varying           | 
+ rating      | character varying           | 
+ created_at  | timestamp without time zone | not null
+ updated_at  | timestamp without time zone | not null
+Indexes:
+    "product_ratings_pkey" PRIMARY KEY, btree (id)
+    "index_product_ratings_on_product_id" btree (product_id)
+    "index_product_ratings_on_user_id" btree (user_id)
+
