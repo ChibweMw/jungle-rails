@@ -26,12 +26,23 @@
       </div>
 
       <div class="col-sm-12">
+        <h3>Write a review!</h3>
+
+        <%= form_for [@product, @new_rating] do |f| %>
+          <%= f.select :rating, ['1', '2', '3', '4', '5'] %>
+          <%= f.text_area :description, size: "60x12" %>
+          <%= f.submit "Create" %>
+        <% end %>
+      </div>
+
+      <div class="col-sm-12">
         <h3>Reviews for <%= @product.name %></h3>
 
         <% @product.product_ratings.each do |item| %>
           <%= item.description %><br>
         <% end %>
       </div>
+
     </div>
 
   </article>
