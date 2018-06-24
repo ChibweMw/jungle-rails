@@ -42,7 +42,8 @@
         <h3>Reviews for <%= @product.name %></h3>
 
         <% @product_ratings.each do |item| %>
-          <%= item.description %><br>
+          <%= item.description %>
+          <%= link_to fa_icon('trash'), product_product_rating_path(:product_id, id: item.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %><br>
         <% end %>
       </div>
 

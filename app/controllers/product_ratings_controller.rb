@@ -7,17 +7,21 @@ class ProductRatingsController < ApplicationController
     @product_rating.product_id = params[:product_id].to_i
     @product_rating.user = current_user
 
-
-    puts "============================"
-    puts @product_rating.inspect
-    puts "============================"
-
     if @product_rating.save!
       redirect_to :back
     else
       redirect_to :back
     end
 
+  end
+
+  def destroy
+    puts "===================="
+    puts "DELETING REVIEW"
+    puts "===================="
+    @product_rating = ProductRating.find params[:id]
+    @product_rating.destroy
+    redirect_to :back, notice: "Review Deleted!"
   end
 
 end
