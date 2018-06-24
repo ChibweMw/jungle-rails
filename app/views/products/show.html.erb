@@ -42,9 +42,14 @@
         <h3>Reviews for <%= @product.name %></h3>
 
         <% @product_ratings.each do |item| %>
+          <h4><strong>
+            <%= item.user.first_name %>
+            <%= item.user.last_name %>
+          </strong></h4>
           <%= item.description %>
+          <br>
           <% if current_user == item.user %>
-            <%= link_to fa_icon('trash'), product_product_rating_path(:product_id, id: item.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= link_to  fa_icon('trash'), product_product_rating_path(:product_id, id: item.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
           <% end %>
           <br>
         <% end %>
