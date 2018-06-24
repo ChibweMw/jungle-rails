@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
-    @procut_ratings = @product.product_ratings.all.order(id: :desc)
+    @product_ratings = @product.product_ratings.all.order(id: :desc)
     @new_rating = ProductRating.new
   end
 
