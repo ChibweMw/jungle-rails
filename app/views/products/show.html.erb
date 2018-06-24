@@ -43,7 +43,10 @@
 
         <% @product_ratings.each do |item| %>
           <%= item.description %>
-          <%= link_to fa_icon('trash'), product_product_rating_path(:product_id, id: item.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %><br>
+          <% if current_user == item.user %>
+            <%= link_to fa_icon('trash'), product_product_rating_path(:product_id, id: item.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
+          <br>
         <% end %>
       </div>
 
