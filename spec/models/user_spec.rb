@@ -73,5 +73,59 @@ RSpec.describe User, type: :model do
       )
       expect(@user).to_not be_valid
     end
+
+    it "is valid when determined minimum passord length is met" do
+      @user = User.create(
+        first_name: 'Johnny',
+        last_name: 'Ryan',
+        email: 'JOHN@ryan.com',
+        password: '123456',
+        password_confirmation: '123456'
+      )
+      expect(@user).to be_valid
+    end
+  end
+
+  describe '.authenticate_with_credentials' do
+    it "is valid when good data is passed into field" do
+      @user = User.create(
+        first_name: 'Johnny',
+        last_name: 'Ryan',
+        email: 'jr@ryan.com',
+        password: '123456',
+        password_confirmation: '123456'
+      )
+      expect(@user).to be_valid
+    end
+    it "is valid when bad data(short password) is passed into field" do
+      @user = User.create(
+        first_name: 'Johnny',
+        last_name: 'Ryan',
+        email: 'jr@ryan.com',
+        password: '1',
+        password_confirmation: '123456'
+      )
+      expect(@user).to_not be_valid
+    end
+    it "is valid when whitespace is before email" do
+      @user = User.create(
+        first_name: 'Johnny',
+        last_name: 'Ryan',
+        email: '    jr@ryan.com',
+        password: '123456',
+        password_confirmation: '123456'
+      )
+      expect(@user).to be_valid
+    end
+    it "is valid when email is mis-cased, but otherwise correct" do
+      @user = User.create(
+        first_name: 'Johnny',
+        last_name: 'Ryan',
+        email: 'jr@ryan.com',
+        password: '123456',
+        password_confirmation: '123456'
+      )
+      expect(@user.email).to eql('JR@ryan.com'.downcase)
+    end
   end
 end
