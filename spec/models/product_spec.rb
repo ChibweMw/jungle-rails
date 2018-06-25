@@ -7,10 +7,25 @@ RSpec.describe Product, type: :model do
       @product = @category.products.new name: 'Wood Rings', price: 1000, quantity: 21
       expect(@product.save!).to be_truthy
     end
-
-    it "is not valid without a name"
-    it "is not valid without a price"
-    it "is not valid without a quantity"
-    it "is not valid without a category"
+    it "is not valid without a name" do
+      @category = Category.new name: 'Sporting Gear'
+      @product = @category.products.new name: nil, price: 1000, quantity: 21
+      expect(@product.errors.full_messages).to be_truthy
+    end
+    it "is not valid without a price" do
+      @category = Category.new name: 'Sporting Gear'
+      @product = @category.products.new name: 'Wood Rings', price: nil, quantity: 21
+      expect(@product.errors.full_messages).to be_truthy
+    end
+    it "is not valid without a quantity" do
+      @category = Category.new name: 'Sporting Gear'
+      @product = @category.products.new name: 'Wood Rings', price: 1000, quantity: nil
+      expect(@product.errors.full_messages).to be_truthy
+    end
+    it "is not valid without a category" do
+      @category = Category.new name: 'Sporting Gear'
+      @product = @category.products.new name: 'Wood Rings', price: 1000, quantity: 21, category: nil
+      expect(@product.errors.full_messages).to be_truthy
+    end
   end
 end
