@@ -165,4 +165,16 @@ ProductRating.create!({
   rating: 5
 })
 
+puts "Re-creating users ..."
+
+User.destroy_all
+
+User.create!({
+  first_name: 'John',
+  last_name: 'Ryan',
+  email: 'john@ryan.com',
+  password: '123456',
+  password_confirmation: '123456'
+})
+
 puts "DONE!"

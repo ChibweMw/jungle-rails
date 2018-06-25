@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
   belongs_to :category
   has_many :product_ratings
 
-  validates_presence_of :name
+  validates :name, presence: true
   validates :price, presence: true
   validates :quantity, presence: true
   validates :category, presence: true
