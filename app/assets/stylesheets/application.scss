@@ -2,11 +2,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
 // App
 @import "products";
+@import "membership";
 
 // Global
 body {
   padding-top: 70px;
+  padding-bottom: 2em;
+  font-family: 'Varela Round', sans-serif;
 }
+

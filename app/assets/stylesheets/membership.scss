@@ -1,0 +1,22 @@
+.member-form {
+  overflow: auto;
+  width: 300px;
+  background-color: white;
+  margin: 0em auto;
+  padding-bottom: 0px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0.1px grey;
+}
+
+.member-form input {
+  text-align: center;
+  width: -webkit-fill-available;
+  width: max-width;
+  border: none;
+}
+
+.form-label {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
