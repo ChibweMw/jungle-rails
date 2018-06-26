@@ -125,7 +125,19 @@ RSpec.describe User, type: :model do
         password: '123456',
         password_confirmation: '123456'
       )
-      expect(@user.email).to eql('JR@ryan.com'.downcase)
+      result = User.authenticate_with_credentials('JR@ryan.com', @user.password)
+      expect(result).to be_truthy
+    end
+    it "is valid when email in db is uppercase" do
+      @user = User.create(
+        first_name: 'Johnny',
+        last_name: 'Ryan',
+        email: 'JR@ryan.com',
+        password: '123456',
+        password_confirmation: '123456'
+      )
+      result = User.authenticate_with_credentials('jr@ryan.com', @user.password)
+      expect(result).to be_truthy
     end
   end
 end
