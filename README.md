@@ -2,6 +2,12 @@
 
 A mini e-commerce application built with Rails 4.2, with Stripe integration to handle financial transactions.
 
+##Screenshots
+![Homepage](https://github.com/ChibweMw/jungle-rails/blob/master/docs/Homepage.png?raw=true)
+![Cart](https://github.com/ChibweMw/jungle-rails/blob/master/docs/Cart.png?raw=true)
+![Stripe UI](https://github.com/ChibweMw/jungle-rails/blob/master/docs/Stripe%20UI.png?raw=true)
+![Order](https://github.com/ChibweMw/jungle-rails/blob/master/docs/Order.png?raw=true)
+
 ## Setup
 
 1. Fork & Clone
@@ -19,11 +25,13 @@ A mini e-commerce application built with Rails 4.2, with Stripe integration to h
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 ## Dependencies
+
+[Rails Guide](http://guides.rubyonrails.org/v4.2/)
+
 ```
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+* Rails 4.2
 * PostgreSQL 9.x
 * Stripe
-
 
 * sass-rails
 * uglifier
