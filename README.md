@@ -2,7 +2,7 @@
 
 A mini e-commerce application built with Rails 4.2, with Stripe integration to handle financial transactions.
 
-##Screenshots
+## Screenshots
 ![Homepage](https://github.com/ChibweMw/jungle-rails/blob/master/docs/Homepage.png?raw=true)
 ![Cart](https://github.com/ChibweMw/jungle-rails/blob/master/docs/Cart.png?raw=true)
 ![Stripe UI](https://github.com/ChibweMw/jungle-rails/blob/master/docs/Stripe%20UI.png?raw=true)
