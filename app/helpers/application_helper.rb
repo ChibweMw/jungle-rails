@@ -6,4 +6,12 @@ module ApplicationHelper
       "guest"
     end
   end
+
+  def include_correct_name(currUser)
+    if currUser
+      currUser.first_name
+    else
+      "guest"
+    end
+  end
 end

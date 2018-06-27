@@ -16,9 +16,6 @@ class ProductRatingsController < ApplicationController
   end
 
   def destroy
-    puts "===================="
-    puts "DELETING REVIEW"
-    puts "===================="
     @product_rating = ProductRating.find params[:id]
     @product_rating.destroy
     redirect_to :back, notice: "Review Deleted!"

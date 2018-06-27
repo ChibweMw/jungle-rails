@@ -1,7 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
-
+A mini e-commerce application built with Rails 4.2, with Stripe integration to handle financial transactions.
 
 ## Setup
 
@@ -19,10 +18,31 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
-More information in their docs: <https://stripe.com/docs/testing#cards>
-
 ## Dependencies
-
+```
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+
+* sass-rails
+* uglifier
+* coffee-rails
+* therubyracer
+
+* jquery-rails
+* turbolinks
+* jbuilder
+* sdoc
+
+* bcrypt
+
+* puma
+* bootstrap-sass
+* font-awesome-rails
+* money-rails
+* carrierwave
+* rmagick
+* stripe
+* faker
+```
